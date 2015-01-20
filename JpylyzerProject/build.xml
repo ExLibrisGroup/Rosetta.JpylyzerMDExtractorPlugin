@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<project name="JpylyzerMDExtractorPlugin" basedir="." default="build-all">
+	<property file="build.properties" />
+	<path id="classpath">
+		<fileset dir="${lib.dir}" includes="dps-sdk-4.1.0.jar" />
+	</path>
+
+	<target name="build-all" depends="init, copy_jars, compile, jar" />
+
+	<target name="clean">
+		<echo>Cleaning the ${build.dir}</echo>
+		<delete dir="${build.dir}" />
+		<delete dir="${target.dir}" />
+	</target>
+
+	<target name="init" depends="clean">
+		<echo>Creating the build directory</echo>
+		<mkdir dir="${build.dir}/classes" />
+		<mkdir dir="${build.dir}/lib" />
+		<mkdir dir="${target.dir}" />
+	</target>
+
+
+	<target name="copy_jars">
+		<echo>Copy lib jars</echo>
+		<copy todir="${build.dir}/lib" overwrite="true">
+			<fileset dir="${lib.dir}" includes="dps-sdk-4.1.0.jar" />
+		</copy>
+	</target>
+
+	<target name="compile" depends="init">
+		<echo>Compile the source files</echo>
+		<javac srcdir="${src.dir}" destdir="${build.dir}/classes" debug="true" includeantruntime="false">
+			<classpath refid="classpath" />
+		</javac>
+	</target>
+
+	<target name="jar" depends="compile">
+		<jar destfile="${target.dir}/JpylyzerMDExtractorPlugin.jar" basedir="${build.dir}/classes">
+			<fileset dir="${src.dir}" includes="**" excludes=" com/**" />
+			<manifest>
+				<attribute name="Main-Class" value="com.exlibris.dps.repository.plugin.registry.JpylyzerMDExtractorPlugin" />
+			</manifest>
+		</jar>
+	</target>
+
+</project>

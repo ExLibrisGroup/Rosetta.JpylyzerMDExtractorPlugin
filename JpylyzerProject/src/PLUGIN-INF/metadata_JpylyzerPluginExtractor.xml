@@ -1,0 +1,49 @@
+<pl:metadata-config xmlns:pl="http://www.exlibrisgroup.com/Plugins/1.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" >
+  <pl:pluginTypeName>MDExtractorPlugin</pl:pluginTypeName>
+  <pl:deployName>Jpylyzer-JPEG2000</pl:deployName>
+  <pl:className>com.exlibris.dps.repository.plugin.mdExtractor.JpylyzerExtractorPlugin</pl:className>
+  <pl:initParameters>
+  <fr:x_form  xmlns:fr="http://com/exlibris/digitool/common/forms/xmlbeans">
+	<form_name>JpylyzerExtractorPlugin_Params</form_name>
+	<description>JpylyzerExtractorPlugin_parameters_form</description>
+	<version>1.0</version>
+	<grid_x>1</grid_x>
+	<md_format>1</md_format>
+	<x_fields>
+		<x_field>
+			<field_name>jpylyzerPath</field_name>
+			<label>Jpylyzer Path</label>
+			<ui_tool_tip>Path to jpylyzer.py script</ui_tool_tip>
+			<single>false</single>
+			<mandatory>true</mandatory>
+			<x_logic_type>String</x_logic_type>
+			<x_ui_type>TextField</x_ui_type>
+			<css_class>width40</css_class>
+			<x_options></x_options>
+		</x_field>
+	</x_fields>
+</fr:x_form>
+</pl:initParameters>
+  <pl:description>Scape Project- Jpylyzer plugin for Jpeg2000</pl:description>
+  <pl:version>2</pl:version>
+  <pl:materialType>DIGITAL</pl:materialType>
+  <pl:module>Preservation</pl:module>
+  <pl:generalType>TASK</pl:generalType>
+  <pl:publicApi>N</pl:publicApi>
+  <pl:implType>java</pl:implType>
+  <pl:contactPerson>
+    <contact_info xmlns="http://www.exlibrisgroup.com/Plugins/1.0/">
+      <contactType>admin</contactType>
+      <firstName>Exlibris</firstName>
+      <lastName>Ltd</lastName>
+      <telephone1>(050)746-1234</telephone1>
+      <telephone2></telephone2>
+      <email>shaib@exlibris.co.il</email>
+      <address1>Agodat Asport2 Building 9</address1>
+      <address2></address2>
+      <city>Jerusalem</city>
+      <zipCode>00000</zipCode>
+      <country>Israel</country>
+    </contact_info>
+  </pl:contactPerson>
+</pl:metadata-config>
