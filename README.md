@@ -1,4 +1,4 @@
-Rosetta.Jpylyzer
+Rosetta.Jpylyzer 
 ================
 
 Jpylyzer technical metadata plugin
